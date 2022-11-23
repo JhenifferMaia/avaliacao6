@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  p= msg
+  table(class="tabela")
+      thead
+        tr
+          th ID
+          th Tamanho
+          th Tipo
+          th Preço
+          th Ação
+      tfoot
+      tbody
+        each vestido in vestidos
+          tr
+            td= vestido._id
+            td= vestido.tamanho
+            td= vestido.tipo
+            td= vestido.preco
+            td
+              a.ma(href=vestido.url+'/update') Atualizar
+              span |
+              a.md(href=vestido.url+'/delete') Deletar
+              

@@ -1,0 +1,12 @@
+extends ../layout
+
+
+block content
+  h1.titulo CADASTRO DE VESTIDOS
+  p= msg
+  form(action='create' method='POST')
+    input(name='tipo' value='' placeholder='tipo do vestido...')
+    input(name='tamanho' value='' placeholder='tamanho do vestido(G,M)')
+    input(name='preco' value='' placeholder='preco (somente nº)')
+    input(type='submit')
+

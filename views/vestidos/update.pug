@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+  p Atualizando o vestido de id #{doc._id} e tipo #{doc.tipo}
+  form(action='update' method='POST')
+    input(type='hidden' name='id' value=doc._id)
+    input(name='preco' placeholder=doc.preco)
+    input(type='submit')
