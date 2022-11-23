@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  a.inicio(href="/") <
+  p Atualizando o texto de data/titulo #{doc.titulo}
+  form(action='update' method='POST')
+    input(type='hidden' name='id' value=doc._id)
+    input(name='texto' placeholder=doc.texto)
+    input(type='submit')
