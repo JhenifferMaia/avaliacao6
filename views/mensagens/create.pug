@@ -1,0 +1,11 @@
+extends ../layout
+
+
+block content
+  a.inicio(href="/") <
+  div(class="criar")
+    h1.titulo CRIAR TEXTO
+    form(action='create' method='POST')
+      input(name='titulo' value='' placeholder='data' class="escrito")
+      input(name='texto' value='' placeholder='texto' class="escrito")
+      input(type='submit')

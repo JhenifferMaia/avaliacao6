@@ -1,7 +1,7 @@
 //const dotenv = require('dotenv');
 //dotenv.config();
 const mongoose = require('mongoose');
-const urlMongo =`mongodb+srv://maia:maia@sabrina.0atlgks.mongodb.net/?retryWrites=true&w=majority`;
+const urlMongo = `mongodb+srv://maia:maia@sabrina.0atlgks.mongodb.net/?retryWrites=true&w=majority`;
 console.log(urlMongo)
 var createError = require('http-errors');
 var express = require('express');
@@ -9,14 +9,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-mongoose.connect(urlMongo, { useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect(urlMongo, { useNewUrlParser: true, useUnifiedTopology: true });
 const dbConnection = mongoose.connection;
 
 dbConnection.on("error", console.error.bind(console, "Erro na conexão ao MongoDB."));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var vestidosRouter = require('./routes/vestidos');
+var mensagensRouter = require('./routes/mensagens');
 const user = process.env['USER']
 const senha = process.env['PASSWORD']
 
@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/vestidos', vestidosRouter);
+app.use('/mensagens', mensagensRouter);
 
 
 // catch 404 and forward to error handler

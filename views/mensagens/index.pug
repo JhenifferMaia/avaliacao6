@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+
+  a.inicio(href="/") <
+  each mensagem in mensagens
+    div(class="mensagem")
+      h2= mensagem.titulo
+      h3=mensagem.texto
+      a.ma(href=mensagem.url+'/update') Editar
+      span  | 
+      a.md(href=mensagem.url+'/delete') Deletar
